@@ -60,7 +60,7 @@ struct sNode* insertAtPos(struct sNode *head,int pos , int data){
         }
         
         if(crnt==NULL){
-            printf("Position you entered is greater than the present nodes hence appending your data/node at end \n");
+            printf("Position you entered is greater than the present nodes.\nHence appending your data/node at end \n\n");
             head= insertAtEnd(head,data);
             return head;
             
@@ -75,7 +75,7 @@ struct sNode* insertAtPos(struct sNode *head,int pos , int data){
 
 struct sNode *del_1st(struct sNode *head){
     if(head==NULL){
-        printf("List is already Empty ");
+        printf("\nList is already Empty ");
         return head;
     }
     struct sNode *temp = head;
@@ -88,7 +88,7 @@ struct sNode *del_1st(struct sNode *head){
 
 struct sNode * del_last(struct sNode *head){
     if(head==NULL){
-        printf("List is already Empty ");
+        printf("\nList is already Empty ");
         return head;
     }
     // // Handling the single-node case
@@ -111,6 +111,37 @@ struct sNode * del_last(struct sNode *head){
     return head;
 }
 
+struct sNode * del_at_pos(struct sNode * head, int pos){
+    if(head==NULL){
+        printf("\nList is already empty. ");
+        return head;
+    }
+    if(pos <= 0){
+        printf("The postion entered is not valid in this case. \nTry to provide postion starting from 1. \n");
+        return head;
+    }
+    
+    if(pos == 1){
+        head = del_1st(head);
+        return head;
+    }
+    struct sNode * crnt = head;
+    
+    while (crnt!= NULL && pos-1!=1)
+    {
+        pos--;
+        crnt=crnt->next;
+    }
+    if(pos>1){
+        head = del_last(head);
+        printf("\nThe postion u entered is greater than the present count of nodes.\nHence deleting last node.");
+        return head;
+    }
+    
+    crnt->next = crnt->next->next;
+
+    return head;
+}
 int main(){
         struct sNode * head = NULL;
         head = insertAtBeg(head, 19);
@@ -118,6 +149,9 @@ int main(){
         head = insertAtBeg(head, 46);
         head = insertAtEnd(head,78);
         head = insertAtPos(head,1, 100);
+        head = insertAtPos(head,3, 200);
+        head = insertAtPos(head,10, 300);
+        head = insertAtPos(head,7, 400);
 
         // head= del_1st(head);
         // head= del_1st(head);
@@ -125,6 +159,12 @@ int main(){
         // head=del_1st(head);
         // head=del_last(head);
         
+
+         head = del_at_pos(head,10);
+         
+         head = del_at_pos(head,1);
+        //  head = del_at_pos(head,6);
+
 
 
         struct sNode * ptr = head;
