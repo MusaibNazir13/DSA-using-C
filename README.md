@@ -38,7 +38,7 @@ DSA-using-C/
   </li>
 </ol>
 
-<h2>🎯 Goals</h2>
+<!-- <h2>🎯 Goals</h2>
 <ul>
   <li>Strengthen understanding of core Data Structures and Algorithms using C programming.</li>
   <li>Build a personal reference library for future semesters, coding , interviews, and competitive programming.</li>
@@ -46,4 +46,4 @@ DSA-using-C/
 </ul>
 
 <h2>🤝 Contributing</h2>
-<p>Pull requests are welcome! If you spot a bug or want to add a new algorithm, feel free to fork and submit a PR.</p>
+<p>Pull requests are welcome! If you spot a bug or want to add a new algorithm, feel free to fork and submit a PR.</p> -->
