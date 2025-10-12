@@ -1,0 +1,46 @@
+<h1>DSA-using-C</h1>
+
+<p>A curated collection of Data Structures and Algorithms implemented in C. This repository is designed for learners and developers who want to understand core DSA concepts through clean, modular C code.</p>
+
+<h2>🚀 Features</h2>
+<ul>
+  <li>Basic and advanced data structures (Linked Lists, Stacks, Queues, Trees, Graphs)</li>
+  <li>Algorithm implementations (Sorting, Searching, Recursion, Dynamic Programming)</li>
+  <li>Modular code structure for easy reuse and testing</li>
+  <li>Well-commented code for clarity and learning</li>
+</ul>
+
+<h2>📁 Folder Structure</h2>
+<pre>
+DSA-using-C/
+├── singly_LL.c/
+├── doubly_LL.c/
+├── ./
+├── ./
+├── ./
+└── ./
+</pre>
+
+<h2>🛠️ How to Use</h2>
+<ol>
+  <li>Clone the repo:
+    <pre><code>git clone https://github.com/MusaibNazir13/DSA-using-C.git</code></pre>
+  </li>
+  <li>Navigate to any folder and compile the C files using:
+    <pre><code>gcc filename.c -o output
+./output</code></pre>
+  </li>
+</ol>
+
+<h2>🎯 Goals</h2>
+<ul>
+  <li>Build a reusable toolkit of DSA implementations in C</li>
+  <li>Serve as a reference for interviews, exams, and projects</li>
+  <li>Encourage contributions and collaborative learning</li>
+</ul>
+
+<h2>🤝 Contributing</h2>
+<p>Pull requests are welcome! If you spot a bug or want to add a new algorithm, feel free to fork and submit a PR.</p>
+
+<h2>📄 License</h2>
+<p>This project is licensed under the MIT License.</p>
