@@ -65,7 +65,7 @@ struct dNode * inAt_pos(struct dNode *head,int pos,int data){
 }
 
 struct dNode *del_beg(struct dNode *head){
-        if(head==NULL) printf("List is already empty");
+        if(head==NULL) {printf("List is already empty"); return head;}
         struct dNode * temp = head; 
         head=head->next;
         free(temp);
@@ -73,23 +73,37 @@ struct dNode *del_beg(struct dNode *head){
         {
             head->prev=NULL;
         }
-        
-       
         return head;
 }
+struct dNode *del_end(struct dNode *head){
+        if(head==NULL) {printf("List is already empty\n"); return head;}
+        struct dNode * ptr = head;
+        while (ptr->next!=NULL)
+        {
+            ptr=ptr->next;
+        }
+            ptr->prev->next=NULL;
+            ptr->next=NULL;
+            free(ptr);
+
+        return head;
+} 
 int main(){
         struct dNode * head = NULL;
-        head = begInsert(head,45);
-        head = begInsert(head,20);
-        head = begInsert(head,10);
-        head = begInsert(head,5);
-        head = begInsert(head,1);
+        // head = begInsert(head,45);
+        // head = begInsert(head,20);
+        // head = begInsert(head,10);
+        // head = begInsert(head,5);
+        // head = begInsert(head,1);
 
-        head = endInsert(head,50);
+        // head = endInsert(head,50);
 
-        head = inAt_pos(head,3,80);
+        // head = inAt_pos(head,3,80);
 
-        head = del_beg(head);
+        // head = del_beg(head);
+
+        // head = del_end(head);
+        head = del_end(head);
 
         printf("The Forward Traversal of DL List using next pointer: ");
     struct dNode * ptr = head;
