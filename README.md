@@ -2,7 +2,7 @@
 
 <p>A curated collection of Data Structures and Algorithms implemented in C. This repository is designed for learning and evaluation purpose only.</p>
 <h2>📄 Purpose</h2>
-<p>This repository is built as an assignment from <i>Prof SYED MUJTABA</i> at <b>Islamic University of Science & Technology (IUST)</b> .</p>
+<p>This repository is built as an assignment from <b>Prof. SYED MUJTABA</b> at <i>Islamic University of Science & Technology (IUST)</i> .</p>
 <h2>📁 Folder Structure</h2>
 <pre>
 DSA-using-C/
