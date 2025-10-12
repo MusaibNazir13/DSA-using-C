@@ -64,6 +64,19 @@ struct dNode * inAt_pos(struct dNode *head,int pos,int data){
         return head;
 }
 
+struct dNode *del_beg(struct dNode *head){
+        if(head==NULL) printf("List is already empty");
+        struct dNode * temp = head; 
+        head=head->next;
+        free(temp);
+        if (head!=NULL)
+        {
+            head->prev=NULL;
+        }
+        
+       
+        return head;
+}
 int main(){
         struct dNode * head = NULL;
         head = begInsert(head,45);
@@ -75,6 +88,8 @@ int main(){
         head = endInsert(head,50);
 
         head = inAt_pos(head,3,80);
+
+        head = del_beg(head);
 
         printf("The Forward Traversal of DL List using next pointer: ");
     struct dNode * ptr = head;
