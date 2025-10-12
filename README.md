@@ -42,5 +42,5 @@ DSA-using-C/
 <h2>🤝 Contributing</h2>
 <p>Pull requests are welcome! If you spot a bug or want to add a new algorithm, feel free to fork and submit a PR.</p>
 
-<h2>📄 License</h2>
-<p>This project is licensed under the MIT License.</p>
+<h2>📄 Purpose</h2>
+<p>This repository is built as an assignment from Prof SYED MUJTABA at <b>Islamic University of Science & Technology (IUST)</b> .</p>
