@@ -11,10 +11,10 @@ struct sNode * newNode(int data){
         nNode->data=data;
         nNode->next=NULL;
         return nNode;
-}      
+}     
 
 struct sNode * insertAtBeg(struct sNode * head, int data){
-       struct sNode * node= newNode(data);
+       struct sNode * node = newNode(data);
        node->next=head;
 
        return node;
@@ -199,11 +199,11 @@ int main(){
         // head = insertAtPos(head,10, 300);
         // head = insertAtPos(head,7, 400);
 
-        // head= del_1st(head);
-        // head= del_1st(head);
-        // head= del_1st(head);
-        // head=del_1st(head);
-        // head=del_last(head);
+        // head = del_1st(head);
+        // head = del_1st(head);
+        // head = del_1st(head);
+        // head =del_1st(head);
+        // head =del_last(head);
         
 
         //  head = del_at_pos(head,10);
