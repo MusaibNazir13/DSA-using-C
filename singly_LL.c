@@ -142,6 +142,38 @@ struct sNode * del_at_pos(struct sNode * head, int pos){
 
     return head;
 }
+
+struct sNode * reverse_list(struct sNode * head){
+        if (head==NULL)
+        {
+            printf("\nThere is nothing to reverse.\n");
+            return head;
+        }
+        
+        //This is the 1st un refined version that reverses the data by using insertBeg
+        // struct sNode * crntPtr = head;
+        // while (crntPtr!=NULL)
+        // {
+        //     head = insertAtBeg(head,crntPtr->data);
+        //     crntPtr=crntPtr->next;
+        // }
+        // printf("\nHere is the reversed list: ");
+        struct sNode *crnt = head;
+        struct sNode * prev = NULL;
+        struct sNode * next = NULL;
+
+        while(crnt!=NULL){
+            next = crnt->next;
+            crnt->next = prev;
+            prev = crnt;
+            crnt = next;
+        }
+
+        head = prev;
+
+        return head;
+}
+
 int main(){
         struct sNode * head = NULL;
         head = insertAtBeg(head, 19);
@@ -160,12 +192,12 @@ int main(){
         // head=del_last(head);
         
 
-         head = del_at_pos(head,10);
+        //  head = del_at_pos(head,10);
          
-         head = del_at_pos(head,1);
+        //  head = del_at_pos(head,1);
         //  head = del_at_pos(head,6);
 
-
+        head = reverse_list(head);
 
         struct sNode * ptr = head;
         while (ptr!=NULL)
