@@ -40,6 +40,30 @@ struct dNode * endInsert(struct dNode * head, int data){
         
         return head;
 }
+
+struct dNode * inAt_pos(struct dNode *head,int pos,int data){
+        
+        if(pos<1){ printf("Position value must be > = 1\n"); return head; }
+        if(pos==1){ head = begInsert(head,data); return head; }
+        struct dNode * nNode = newNode(data);
+        struct dNode * ptr = head;
+
+       
+
+        while (ptr!=NULL && pos!=2)
+        {
+            ptr=ptr->next;
+            pos--;    
+        }
+        if(ptr==NULL){head = endInsert(head,data); return head;}
+        nNode->next = ptr->next;
+        ptr->next->prev = nNode;
+        ptr->next = nNode;
+        nNode->prev = ptr;
+
+        return head;
+}
+
 int main(){
         struct dNode * head = NULL;
         head = begInsert(head,45);
@@ -49,6 +73,8 @@ int main(){
         head = begInsert(head,1);
 
         head = endInsert(head,50);
+
+        head = inAt_pos(head,3,80);
 
         printf("The Forward Traversal of DL List using next pointer: ");
     struct dNode * ptr = head;
