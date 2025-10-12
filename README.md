@@ -1,6 +1,6 @@
 <h1>DSA-using-C</h1>
 
-<p>A curated collection of Data Structures and Algorithms implemented in C. This repository is designed for learning and evaluation purpose only.</p>
+<p>This repository is designed for learning and evaluation purpose only.</p>
 <h2>📄 Purpose</h2>
 <p>This repository is built as an assignment from <b>Prof. SYED MUJTABA</b> at <i>Islamic University of Science & Technology (IUST)</i> .</p>
 <h2>📁 Folder Structure</h2>
@@ -27,7 +27,7 @@ DSA-using-C/
 └── ./
 </pre>
 
-<h2>🛠️ How to Use</h2>
+<!-- <h2>🛠️ How to Use</h2>
 <ol>
   <li>Clone the repo:
     <pre><code>git clone https://github.com/MusaibNazir13/DSA-using-C.git</code></pre>
@@ -36,7 +36,7 @@ DSA-using-C/
     <pre><code>gcc filename.c -o output
 ./output</code></pre>
   </li>
-</ol>
+</ol> -->
 
 <!-- <h2>🎯 Goals</h2>
 <ul>
