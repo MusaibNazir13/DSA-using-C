@@ -27,6 +27,19 @@ struct dNode * begInsert(struct dNode * head,int data){
    return nNode; 
 }
 
+struct dNode * endInsert(struct dNode * head, int data){
+        struct dNode * nNode = newNode(data);    
+        if(head==NULL) return (head = nNode);
+        struct dNode * ptr = head;
+        while (ptr->next!=NULL)   
+        {
+            ptr=ptr->next;
+        }
+        ptr->next = nNode;
+        nNode->prev = ptr;
+        
+        return head;
+}
 int main(){
         struct dNode * head = NULL;
         head = begInsert(head,45);
@@ -35,7 +48,9 @@ int main(){
         head = begInsert(head,5);
         head = begInsert(head,1);
 
-        printf("The Doubly Linked List is: ");
+        head = endInsert(head,50);
+
+        printf("The Forward Traversal of DL List using next pointer: ");
     struct dNode * ptr = head;
     while (ptr!=NULL)
     {  
