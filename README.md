@@ -35,4 +35,4 @@ DSA-using-C/
 <p>Pull requests are welcome! If you spot a bug or want to add a new algorithm, feel free to fork and submit a PR.</p>
 
 <h2>📄 Purpose</h2>
-<p>This repository is built as an assignment from Prof SYED MUJTABA at <b>Islamic University of Science & Technology (IUST)</b> .</p>
+<p>This repository is built as an assignment from <i>Prof SYED MUJTABA</i>i> at <b>Islamic University of Science & Technology (IUST)</b> .</p>
