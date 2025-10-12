@@ -173,17 +173,31 @@ struct sNode * reverse_list(struct sNode * head){
 
         return head;
 }
+struct sNode * merge_list(struct sNode * head1, struct sNode *head2){
+    if (head1->next == NULL) return head2;
+    if (head2->next == NULL) return head1;
+
+    if (head1->data<=head2->data) 
+    {
+        head1->next = merge_list(head1->next,head2); 
+        return head1;    
+    }else{
+        head2->next = merge_list(head2->next,head1);
+        return head2;
+    }
+    //In this function I tried using recursive fn to merge the two sorted lists.
+}
 
 int main(){
         struct sNode * head = NULL;
-        head = insertAtBeg(head, 19);
-        head = insertAtBeg(head, 12);
-        head = insertAtBeg(head, 46);
-        head = insertAtEnd(head,78);
-        head = insertAtPos(head,1, 100);
-        head = insertAtPos(head,3, 200);
-        head = insertAtPos(head,10, 300);
-        head = insertAtPos(head,7, 400);
+        head = insertAtBeg(head, 20);
+        head = insertAtBeg(head, 25);
+        head = insertAtBeg(head, 69);
+        head = insertAtEnd(head,10);
+        // head = insertAtPos(head,1, 100);
+        // head = insertAtPos(head,3, 200);
+        // head = insertAtPos(head,10, 300);
+        // head = insertAtPos(head,7, 400);
 
         // head= del_1st(head);
         // head= del_1st(head);
@@ -200,10 +214,30 @@ int main(){
         head = reverse_list(head);
 
         struct sNode * ptr = head;
-        while (ptr!=NULL)
+        printf("(1st is Reversed Version)\nThe 1st Linked List: ");
+        while(ptr!=NULL)
         {
                 printf("-> %d ",ptr->data);
                 ptr=ptr->next;
+        }
+
+
+        struct sNode * head2 = NULL;
+        head2 = insertAtBeg(head2, 70);
+        head2 = insertAtBeg(head2, 68);
+        head2 = insertAtBeg(head2, 65);
+        head2 = insertAtEnd(head2,80);
+        // head2 = insertAtPos(head2,1, 20);
+        // head2 = insertAtPos(head2,3, 200);
+        // head2 = insertAtPos(head2,10, 300);
+        // head2 = insertAtPos(head2,7, 400);
+
+        printf("\nThe 2nd Linked List: ");
+        struct sNode * ptr1 = head2;
+        while(ptr1!=NULL)
+        {
+                printf("-> %d ",ptr1->data);
+                ptr1=ptr1->next;
         }
             /*Note: below lines are just for rough understanding
                 head=(struct sNode*)malloc(sizeof(struct sNode));
@@ -211,7 +245,14 @@ int main(){
                 head->next=NULL;
                 printf("%d",head->data);
             */
-
+        struct sNode * mHead = merge_list(head,head2);
+        struct sNode * ptr2 = mHead;
+        printf("\nThe merged list is: ");
+        while(ptr2!=NULL)
+        {
+                printf("-> %d ",ptr2->data);
+                ptr2=ptr2->next;
+        }
 
         return 0;
 }
