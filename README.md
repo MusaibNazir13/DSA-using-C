@@ -1,14 +1,6 @@
 <h1>DSA-using-C</h1>
 
-<p>A curated collection of Data Structures and Algorithms implemented in C. This repository is designed for learners and developers who want to understand core DSA concepts through clean, modular C code.</p>
-
-<h2>🚀 Features</h2>
-<ul>
-  <li>Basic and advanced data structures (Linked Lists, Stacks, Queues, Trees, Graphs)</li>
-  <li>Algorithm implementations (Sorting, Searching, Recursion, Dynamic Programming)</li>
-  <li>Modular code structure for easy reuse and testing</li>
-  <li>Well-commented code for clarity and learning</li>
-</ul>
+<p>A curated collection of Data Structures and Algorithms implemented in C. This repository is designed for learning and evaluation purpose only.</p>
 
 <h2>📁 Folder Structure</h2>
 <pre>
@@ -34,9 +26,9 @@ DSA-using-C/
 
 <h2>🎯 Goals</h2>
 <ul>
-  <li>Build a reusable toolkit of DSA implementations in C</li>
-  <li>Serve as a reference for interviews, exams, and projects</li>
-  <li>Encourage contributions and collaborative learning</li>
+  <li>Strengthen understanding of core Data Structures and Algorithms using C programming.</li>
+  <li>Build a personal reference library for future semesters, coding , interviews, and competitive programming.</li>
+  <li>Practice clean code habits and modular design for scalable learning. </li>
 </ul>
 
 <h2>🤝 Contributing</h2>
