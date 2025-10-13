@@ -24,7 +24,10 @@ DSA-using-C/
           ├──deletion at end
           ├──deletion at any position
 
-└── ./
+└──stack
+          ├──push
+          ├──pop
+          └──and switch case menu
 </pre>
 
 <!-- <h2>🛠️ How to Use</h2>
