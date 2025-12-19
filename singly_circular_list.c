@@ -20,9 +20,18 @@ struct Node * createNode(int data){
 
     return newNode;
 }
-struct Node * insertBeg(){
-    
+struct Node * insertBeg(int data){
+    struct Node * nNode = createNode(data);
+    if (tail==NULL)
+    {
+        nNode->next = nNode;
+        return nNode;
+    }
+    nNode->next = tail->next;
+    tail->next = nNode;
+    return tail;    
 }
+
 int main(){
 
 }
