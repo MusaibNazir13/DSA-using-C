@@ -41,6 +41,35 @@ struct Node * insertEnd(int data){
     tail->next = nNode;
     return nNode;
 }
+struct Node * insertAtPos(int pos,int data){
+    struct Node * nNode = createNode(data);
+    if(tail==NULL){
+        nNode->next = nNode;
+        printf("\nBecause the the list is empty this node is inserted as head/tail");
+        return nNode;
+    }
+    struct Node * temp = tail->next;
+    
+    if (pos==1)
+    {
+        return insertBeg(data);
+    }
+    
+
+    while (pos!=2)
+    {
+        temp = temp->next;
+        if (temp==tail->next)
+        {
+            return insertEnd(data);
+        }
+         pos--;
+    }
+    nNode->next=temp->next;
+    temp->next = nNode;
+
+    return tail;
+}
 void display(){
     if (tail==NULL)
     {
@@ -60,6 +89,7 @@ int main(){
         insertBeg(10);
         insertBeg(60);
         tail = insertEnd(41); 
+        tail = insertAtPos(4,20);
         display();
 
 }
