@@ -31,7 +31,16 @@ struct Node * insertBeg(int data){
     tail->next = nNode;
     return tail;    
 }
-
+struct Node * insertEnd(int data){
+    struct Node * nNode = createNode(data);
+    if(tail == NULL){
+        nNode->next = nNode;
+        return nNode;
+    }
+    nNode->next = tail->next;
+    tail->next = nNode;
+    return nNode;
+}
 void display(){
     if (tail==NULL)
     {
@@ -50,5 +59,7 @@ int main(){
         tail=insertBeg(45);
         insertBeg(10);
         insertBeg(60);
+        tail = insertEnd(41); 
         display();
+
 }
