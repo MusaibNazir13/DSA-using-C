@@ -1,8 +1,7 @@
 <h1>DSA-using-C</h1>
 
-<p>This repository is designed for learning and evaluation purpose only.</p>
 <h2>📄 Purpose</h2>
-<p>This repository is built as an assignment from <b>Prof. SYED MUJTABA</b> at <i>Islamic University of Science & Technology (IUST)</i> .</p>
+<p><i>This repository is designed for learning and evaluation purpose only.</i> .</p>
 <h2>📁 Folder Structure</h2>
 <pre>
 DSA-using-C/
@@ -23,6 +22,16 @@ DSA-using-C/
           ├──deletion at beginning
           ├──deletion at end
           ├──deletion at any position
+ ├── singly_circular_list.c
+          ├──createNode
+          ├──insertBeg
+          ├──insertEnd
+          ├──insertAtPos
+          ├──deleteBeg
+          ├──deleteEnd
+          ├──deletePos
+          ├──display
+          ├──menu         
 
 └──stack
           ├──push
