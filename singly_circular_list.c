@@ -32,6 +32,23 @@ struct Node * insertBeg(int data){
     return tail;    
 }
 
-int main(){
+void display(){
+    if (tail==NULL)
+    {
+        printf("Empty List, there is nothing to print");
+        return;
+    }
+    
+    struct Node * temp = tail->next;
+    do{
+        printf("%d -> ",temp->data);
+        temp=temp->next;
+    }while(temp!=tail->next);
 
+}
+int main(){
+        tail=insertBeg(45);
+        insertBeg(10);
+        insertBeg(60);
+        display();
 }
