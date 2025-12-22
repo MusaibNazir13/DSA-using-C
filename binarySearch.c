@@ -1,0 +1,35 @@
+//to apply this search the ds must be sorted
+//the access to any element in the ds should require constant time, because we need the mid value to be compared
+#include <stdio.h>
+
+int binarySearch(int arr[],int n, int key){
+    int low = 0;
+    int high = n-1;
+    
+    while(low<=high){
+        int mid = low + (high-low)/2;
+        
+        if (arr[mid]==key)
+        {
+            return mid;
+        }
+        // if the value is greater than mid then leave the left half
+        if (arr[mid]<key)
+        {
+            low = mid+1;
+        }
+        // if the value is less than mid then leave the right half
+        if (arr[mid]>key)
+        {
+            high = mid - 1;
+        } 
+    }
+    return -1;
+}
+int main(){
+    int arr[]={10,15,21,56,70,89};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    int search = 56;
+    int index = binarySearch(arr,size,search);
+    printf("%d is found at positon %d",search,index+1);
+}
