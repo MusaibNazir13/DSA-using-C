@@ -1,5 +1,5 @@
 //to apply this search the ds must be sorted
-//the access to any element in the ds should require constant time, because we need the mid value to be compared
+//the access to any element in the ds should require constant time, because we need the mid value to be compared, reaching mid of the linked list like ds will be ineffecient in this binary search
 #include <stdio.h>
 
 int binarySearch(int arr[],int n, int key){
