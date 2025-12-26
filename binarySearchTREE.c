@@ -45,6 +45,40 @@ void inOrderTraverse(tNode *root){
     printf("%d ",root->data);
     inOrderTraverse(root->right);
 }
+
+
+
+//this is Qn: 5 from the assignment: Inorder traversal without the recursion
+#define MAX 100
+tNode * stack[MAX];
+int top = -1;
+void push(tNode * cNode){
+    //will increment the top 1st pointing to new index and then will just push the address onto the index top of the stack 
+    stack[++top] = cNode;
+}
+tNode *pop(){
+    //will return the address of the node at the index top and then decrement the top
+    return stack[top--];
+}
+
+void inOrderNoRec(tNode * root){
+    tNode * crnt = root;   
+    
+    while (crnt!=NULL || top!=-1)        
+    {
+        while (crnt!=NULL)
+        {
+            push(crnt);
+            crnt=crnt->left;
+        }
+        
+        crnt = pop();
+        printf("%d ",crnt->data);
+        crnt=crnt->right;
+    }
+    
+}
+
 void preOrder(tNode *root){
     if (root==NULL)
     {
@@ -132,10 +166,13 @@ int main(){
     int findElement = 55;
     printf("\nThe element %d %s\n",findElement,searhBst(root,findElement)?" found":" not found");
 
+    printf("This is inorder without recursion: ");
+    inOrderNoRec(root);
+    printf("\nThis is In Order with recursive fn: ");
     inOrderTraverse(root);
-    printf("\n");
+    printf("\nThis is Pre Order traversal using recursion: ");
     preOrder(root);
-    printf("\n");
+    printf("\nThis is Post Order traversal using recursion: ");
     postOrder(root);  
 
     int delElement = 70;
