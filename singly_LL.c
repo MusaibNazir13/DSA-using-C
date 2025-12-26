@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 struct sNode{
     int data;
@@ -37,6 +38,7 @@ struct sNode *insertAtEnd(struct sNode *head,int data){
      
       return head;  
 }
+
 
 struct sNode* insertAtPos(struct sNode *head,int pos , int data){
         struct sNode *npNode = newNode(data);
@@ -187,13 +189,40 @@ struct sNode * merge_list(struct sNode * head1, struct sNode *head2){
     }
     //In this function I tried using recursive fn to merge the two sorted lists.
 }
+//Assignment Q2: Find the middle element of LL in a single pass
+int findMiddleElement(struct sNode *head){
+    struct sNode *steady = head;
+    struct sNode *fast = head;
+    // this logic follows the hare and tortoise logic : when fast one reaches the end the steady one will be in middle because the fast one is taking twice the step of steady
+    while (fast!=NULL && fast->next!=NULL)
+    {
+        steady=steady->next;
+        fast=fast->next->next;
+    }
+    return steady->data;    
+}
+bool detectCycle(struct sNode *head){
+    struct sNode *steady = head;
+    struct sNode *fast = head;
+    // this logic follows the hare and tortoise logic : when fast one reaches the end the steady one will be in middle because the fast one is taking twice the step of steady
+    while (fast!=NULL && fast->next!=NULL)
+    {
+        steady=steady->next;
+        fast=fast->next->next;
+        if(fast==steady){return true;}
+    }
 
+    return false;    
+}
 int main(){
         struct sNode * head = NULL;
         head = insertAtBeg(head, 20);
         head = insertAtBeg(head, 25);
         head = insertAtBeg(head, 69);
         head = insertAtEnd(head,10);
+                insertAtEnd(head,5);
+                insertAtEnd(head,5);
+                // insertAtEnd(head,5);
         // head = insertAtPos(head,1, 100);
         // head = insertAtPos(head,3, 200);
         // head = insertAtPos(head,10, 300);
@@ -210,6 +239,11 @@ int main(){
          
         //  head = del_at_pos(head,1);
         //  head = del_at_pos(head,6);
+
+        int middle;
+        //middle element in the even elemented list will be the 1 before the middle element 
+        middle = findMiddleElement(head);
+        printf("\nMiddle Element found in the L-List using a single pass: %d\n",middle);
 
         head = reverse_list(head);
 
@@ -232,6 +266,8 @@ int main(){
         // head2 = insertAtPos(head2,10, 300);
         // head2 = insertAtPos(head2,7, 400);
 
+        
+
         printf("\nThe 2nd Linked List: ");
         struct sNode * ptr1 = head2;
         while(ptr1!=NULL)
@@ -245,8 +281,8 @@ int main(){
                 head->next=NULL;
                 printf("%d",head->data);
             */
-        struct sNode * mHead = merge_list(head,head2);
-        struct sNode * ptr2 = mHead;
+        head = merge_list(head,head2);
+        struct sNode * ptr2 = head;
         printf("\nThe merged list is: ");
         while(ptr2!=NULL)
         {
@@ -254,5 +290,18 @@ int main(){
                 ptr2=ptr2->next;
         }
 
+        
+        printf("\nBefore Creating cycle: %s\n",detectCycle(head)?"Cycle found.":"Cycle not found");
+        //i am manually creating a cycle in this linked list for testing purpose
+        ptr =  head;
+        struct sNode * target = head->next;
+        while (ptr->next!=NULL)
+        {
+            ptr=ptr->next;
+        }
+        ptr->next=target;
+        
+        printf("After manually creating cycle in the L-List : %s\n\n",detectCycle(head)?"Cycle found.":"Cycle not found");
+       
         return 0;
 }
