@@ -37,6 +37,10 @@ DSA-using-C/
           ├──push
           ├──pop
           └──and switch case menu
+├──BST  
+          ├── INSERTION IN BST
+          ├── DELETION IN BST
+          ├── CREATION 
 </pre>
 
 <!-- <h2>🛠️ How to Use</h2>
