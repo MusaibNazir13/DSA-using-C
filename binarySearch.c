@@ -29,7 +29,7 @@ int binarySearch(int arr[],int n, int key){
 int main(){
     int arr[]={10,15,21,56,70,89};
     int size = sizeof(arr)/sizeof(arr[0]);
-    int search = 98;
+    int search = 89;
     int index = binarySearch(arr,size,search);
     if(index==-1)printf("\n%d was not found in the array.\n",search);
     else printf("%d is found at positon %d",search,index);

@@ -201,6 +201,7 @@ int findMiddleElement(struct sNode *head){
     }
     return steady->data;    
 }
+//Assignment Q1: detect the cycle in the L-List
 bool detectCycle(struct sNode *head){
     struct sNode *steady = head;
     struct sNode *fast = head;
